@@ -67,35 +67,35 @@ const ProgramSlider = () => {
         </div>
 
         <div className="relative max-w-6xl mx-auto">
-          <div className="grid md:grid-cols-2 gap-8 items-center">
-            {/* Image Section */}
-            <div className="relative overflow-hidden rounded-lg shadow-card">
-              <img
-                src={programs[currentSlide].image}
-                alt={programs[currentSlide].title}
-                className="w-full h-80 object-cover transition-transform duration-500 hover:scale-105"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
-              <div className="absolute bottom-4 left-4 text-white">
-                <span className="bg-secondary px-3 py-1 rounded-full text-sm font-medium">
-                  {programs[currentSlide].impact}
-                </span>
-              </div>
-            </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch">
+  {/* Image Section */}
+  <div className="relative overflow-hidden rounded-2xl shadow-xl h-full min-h-[40rem]">
+    <img
+      src={programs[currentSlide].image}
+      alt={programs[currentSlide].title}
+      className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
+    />
+    <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+    <div className="absolute bottom-6 left-6 text-white">
+      <span className="bg-secondary px-5 py-2 rounded-full text-lg font-semibold shadow-md">
+        {programs[currentSlide].impact}
+      </span>
+    </div>
+  </div>
 
-            {/* Content Section */}
-            <Card className="h-80 flex flex-col justify-center">
-              <CardContent className="p-8">
-                <h3 className="text-2xl font-bold text-primary mb-4">
-                  {programs[currentSlide].title}
-                </h3>
-                <p className="text-muted-foreground mb-6 leading-relaxed">
-                  {programs[currentSlide].description}
-                </p>
-                
-              </CardContent>
-            </Card>
-          </div>
+  {/* Content Section */}
+  <Card className="w-full h-full min-h-[40rem] flex flex-col justify-center shadow-xl">
+    <CardContent className="p-14 md:p-20">
+      <h3 className="text-5xl font-bold text-primary mb-8">
+        {programs[currentSlide].title}
+      </h3>
+      <p className="text-muted-foreground text-xl leading-relaxed">
+        {programs[currentSlide].description}
+      </p>
+    </CardContent>
+  </Card>
+</div>
+
 
           {/* Navigation Buttons */}
           <Button

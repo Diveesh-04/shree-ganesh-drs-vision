@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { Heart, Mail, Phone, MapPin } from "lucide-react";
-import drsLogo from "@/assets/drs-logo.png";
+import drsLogo from "@/assets/DRSlogo.jpg";
 
 const Footer = () => {
   return (

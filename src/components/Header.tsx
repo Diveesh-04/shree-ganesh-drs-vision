@@ -1,7 +1,7 @@
 import { Link, useLocation } from "react-router-dom";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import drsLogo from "@/assets/drs-logo.png";
+import drsLogo from "@/assets/DRSlogo.jpg";
 
 const Header = () => {
   const location = useLocation();

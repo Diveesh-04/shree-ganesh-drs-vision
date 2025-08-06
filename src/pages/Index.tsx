@@ -61,44 +61,60 @@ const Index = () => {
 >
   Our Vision & Mission
 </motion.h2>
-      <div className="grid md:grid-cols-3 gap-8 mt-12">
-        <Card className="border-t-4 border-primary transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
-          <CardContent className="p-6 text-center">
-            <div className="bg-primary/10 rounded-full p-4 w-16 h-16 mx-auto mb-4 flex items-center justify-center">
-              <Target className="h-8 w-8 text-primary" />
-            </div>
-            <h3 className="text-xl font-bold text-primary mb-3">Our Mission</h3>
-            <p className="text-muted-foreground">
-              To empower communities through education, healthcare, and sustainable development initiatives.
-            </p>
-          </CardContent>
-        </Card>
-
-        <Card className="border-t-4 border-secondary transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
-          <CardContent className="p-6 text-center">
-            <div className="bg-secondary/10 rounded-full p-4 w-16 h-16 mx-auto mb-4 flex items-center justify-center">
-              <Heart className="h-8 w-8 text-secondary" />
-            </div>
-            <h3 className="text-xl font-bold text-secondary mb-3">Our Vision</h3>
-            <p className="text-muted-foreground">
-              A world where every individual has access to quality education, healthcare, and a clean environment.
-            </p>
-          </CardContent>
-        </Card>
-
-        <Card className="border-t-4 border-accent transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
-          <CardContent className="p-6 text-center">
-            <div className="bg-accent/10 rounded-full p-4 w-16 h-16 mx-auto mb-4 flex items-center justify-center">
-              <Users className="h-8 w-8 text-accent" />
-            </div>
-            <h3 className="text-xl font-bold text-accent mb-3">Our Approach</h3>
-            <p className="text-muted-foreground">
-              Community-driven solutions that are sustainable, scalable, and culturally sensitive.
-            </p>
-          </CardContent>
-        </Card>
+<div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mt-10">
+  <Card className="border-t-4 border-primary transition-all duration-300 hover:shadow-md hover:-translate-y-1 h-full">
+    <CardContent className="p-4 text-center flex flex-col h-full">
+      <div className="bg-primary/10 rounded-full p-3 w-12 h-12 mx-auto mb-3 flex items-center justify-center">
+        <Target className="h-6 w-6 text-primary" />
       </div>
+      <h3 className="text-lg font-semibold text-primary mb-2">Our Mission</h3>
+      <p className="text-sm text-muted-foreground">
+        To empower communities through education, healthcare, and sustainable development initiatives.
+      </p>
+    </CardContent>
+  </Card>
+
+  <Card className="border-t-4 border-secondary transition-all duration-300 hover:shadow-md hover:-translate-y-1 h-full">
+    <CardContent className="p-4 text-center flex flex-col h-full">
+      <div className="bg-secondary/10 rounded-full p-3 w-12 h-12 mx-auto mb-3 flex items-center justify-center">
+        <Heart className="h-6 w-6 text-secondary" />
+      </div>
+      <h3 className="text-lg font-semibold text-secondary mb-2">Our Vision</h3>
+      <p className="text-sm text-muted-foreground">
+        A world where every individual has access to quality education, healthcare, and a clean environment.
+      </p>
+    </CardContent>
+  </Card>
+
+  <Card className="border-t-4 border-accent transition-all duration-300 hover:shadow-md hover:-translate-y-1 h-full">
+    <CardContent className="p-4 text-center flex flex-col h-full">
+      <div className="bg-accent/10 rounded-full p-3 w-12 h-12 mx-auto mb-3 flex items-center justify-center">
+        <Users className="h-6 w-6 text-accent" />
+      </div>
+      <h3 className="text-lg font-semibold text-accent mb-2">Key initiatives</h3>
+      <p className="text-sm text-muted-foreground">
+      A dedicated team at SHREE GANESHA DRS Foundation identifies programs in the areas of education, healthcare, women empowerment, and environmental sustainability, amongst others
+      </p>
+    </CardContent>
+  </Card>
+
+  <Card className="border-t-4 border-gray-400 bg-white transition-all duration-300 hover:shadow-md hover:-translate-y-1 h-full">
+  <CardContent className="p-4 text-center flex flex-col h-full">
+    <div className="bg-gray-200 rounded-full w-12 h-12 mx-auto mb-3 flex items-center justify-center">
+      <span className="text-sm font-bold text-gray-700">CSR</span>
     </div>
+    <h3 className="text-lg font-semibold text-gray-700 mb-2">
+      SHREE GANESHA DRS Foundation CSR
+    </h3>
+    <p className="text-sm text-gray-600">
+      We embrace our responsibility to create a positive impact in the communities in which we work and live.
+    </p>
+  </CardContent>
+</Card>
+
+</div>
+
+</div>
   </div>
 </section>
 

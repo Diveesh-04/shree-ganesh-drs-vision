@@ -2,6 +2,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Card, CardContent } from "@/components/ui/card";
 import { CheckCircle, Users, Lightbulb, Target, ArrowRight, Globe } from "lucide-react";
+import { motion } from "framer-motion";
 
 const Approach = () => {
   const approaches = [
@@ -103,25 +104,29 @@ const Approach = () => {
               {approaches.map((approach, index) => {
                 const IconComponent = approach.icon;
                 return (
-                  <Card key={index} className="border-t-4 border-primary">
-                    <CardContent className="p-8">
-                      <div className="flex items-center mb-4">
-                        <div className="p-3 bg-primary/10 rounded-lg mr-4">
-                          <IconComponent className="h-8 w-8 text-primary" />
+                  <Card
+                  key={index}
+                  className="border-t-4 border-primary transition-all duration-300 ease-in-out hover:shadow-lg hover:scale-[1.02] hover:border-primary/80"
+                >
+                  <CardContent className="p-8">
+                    <div className="flex items-center mb-4">
+                      <div className="p-3 bg-primary/10 rounded-lg mr-4">
+                        <IconComponent className="h-8 w-8 text-primary" />
+                      </div>
+                      <h3 className="text-xl font-bold text-primary">{approach.title}</h3>
+                    </div>
+                    <p className="text-muted-foreground mb-6">{approach.description}</p>
+                    <div className="space-y-2">
+                      {approach.principles.map((principle, idx) => (
+                        <div key={idx} className="flex items-center">
+                          <CheckCircle className="h-4 w-4 text-secondary mr-2 flex-shrink-0" />
+                          <span className="text-sm text-muted-foreground">{principle}</span>
                         </div>
-                        <h3 className="text-xl font-bold text-primary">{approach.title}</h3>
-                      </div>
-                      <p className="text-muted-foreground mb-6">{approach.description}</p>
-                      <div className="space-y-2">
-                        {approach.principles.map((principle, idx) => (
-                          <div key={idx} className="flex items-center">
-                            <CheckCircle className="h-4 w-4 text-secondary mr-2 flex-shrink-0" />
-                            <span className="text-sm text-muted-foreground">{principle}</span>
-                          </div>
-                        ))}
-                      </div>
-                    </CardContent>
-                  </Card>
+                      ))}
+                    </div>
+                  </CardContent>
+                </Card>
+                
                 );
               })}
             </div>
@@ -143,12 +148,18 @@ const Approach = () => {
                         {item.step}
                       </div>
                     </div>
-                    <Card className="flex-1">
-                      <CardContent className="p-6">
-                        <h3 className="text-xl font-bold text-primary mb-2">{item.title}</h3>
-                        <p className="text-muted-foreground">{item.description}</p>
-                      </CardContent>
-                    </Card>
+                    <motion.div
+  initial={{ x: -100, opacity: 0 }}
+  whileInView={{ x: 0, opacity: 1 }}
+  transition={{ duration: 0.6, ease: "easeOut" }}
+>
+  <Card className="flex-1">
+    <CardContent className="p-6">
+      <h3 className="text-xl font-bold text-primary mb-2">{item.title}</h3>
+      <p className="text-muted-foreground">{item.description}</p>
+    </CardContent>
+  </Card>
+</motion.div>
                     {index < process.length - 1 && (
                       <div className="flex-shrink-0 ml-6 mt-6">
                         <ArrowRight className="h-6 w-6 text-primary" />
@@ -169,41 +180,42 @@ const Approach = () => {
                 Guiding Principles
               </h2>
               <div className="grid md:grid-cols-2 gap-8">
-                <Card>
-                  <CardContent className="p-8">
-                    <h3 className="text-xl font-bold text-primary mb-4">Participatory Development</h3>
-                    <p className="text-muted-foreground leading-relaxed">
-                      We believe that communities are the best judges of their own needs. Our approach emphasizes active participation of community members in all stages of program development and implementation.
-                    </p>
-                  </CardContent>
-                </Card>
-                
-                <Card>
-                  <CardContent className="p-8">
-                    <h3 className="text-xl font-bold text-primary mb-4">Capacity Building</h3>
-                    <p className="text-muted-foreground leading-relaxed">
-                      Rather than creating dependency, we focus on building local capacity and empowering communities to become self-sufficient in addressing their challenges.
-                    </p>
-                  </CardContent>
-                </Card>
+              <Card className="transition duration-300 hover:shadow-lg hover:border-primary border">
+  <CardContent className="p-8">
+    <h3 className="text-xl font-bold text-primary mb-4">Participatory Development</h3>
+    <p className="text-muted-foreground leading-relaxed">
+      We believe that communities are the best judges of their own needs. Our approach emphasizes active participation of community members in all stages of program development and implementation.
+    </p>
+  </CardContent>
+</Card>
 
-                <Card>
-                  <CardContent className="p-8">
-                    <h3 className="text-xl font-bold text-primary mb-4">Integrated Solutions</h3>
-                    <p className="text-muted-foreground leading-relaxed">
-                      We recognize that social challenges are interconnected. Our programs address multiple issues simultaneously to create comprehensive, lasting solutions.
-                    </p>
-                  </CardContent>
-                </Card>
+<Card className="transition duration-300 hover:shadow-lg hover:border-primary border">
+  <CardContent className="p-8">
+    <h3 className="text-xl font-bold text-primary mb-4">Capacity Building</h3>
+    <p className="text-muted-foreground leading-relaxed">
+      Rather than creating dependency, we focus on building local capacity and empowering communities to become self-sufficient in addressing their challenges.
+    </p>
+  </CardContent>
+</Card>
 
-                <Card>
-                  <CardContent className="p-8">
-                    <h3 className="text-xl font-bold text-primary mb-4">Cultural Sensitivity</h3>
-                    <p className="text-muted-foreground leading-relaxed">
-                      All our interventions are designed with deep respect for local culture, traditions, and values, ensuring that solutions are culturally appropriate and acceptable.
-                    </p>
-                  </CardContent>
-                </Card>
+<Card className="transition duration-300 hover:shadow-lg hover:border-primary border">
+  <CardContent className="p-8">
+    <h3 className="text-xl font-bold text-primary mb-4">Integrated Solutions</h3>
+    <p className="text-muted-foreground leading-relaxed">
+      We recognize that social challenges are interconnected. Our programs address multiple issues simultaneously to create comprehensive, lasting solutions.
+    </p>
+  </CardContent>
+</Card>
+
+<Card className="transition duration-300 hover:shadow-lg hover:border-primary border">
+  <CardContent className="p-8">
+    <h3 className="text-xl font-bold text-primary mb-4">Cultural Sensitivity</h3>
+    <p className="text-muted-foreground leading-relaxed">
+      All our interventions are designed with deep respect for local culture, traditions, and values, ensuring that solutions are culturally appropriate and acceptable.
+    </p>
+  </CardContent>
+</Card>
+
               </div>
             </div>
           </div>
