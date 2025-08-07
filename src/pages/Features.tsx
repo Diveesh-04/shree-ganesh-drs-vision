@@ -2,6 +2,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { motion } from "framer-motion";
 import { 
   Shield, 
   Users, 
@@ -114,9 +115,15 @@ const Features = () => {
         <section className="py-20 bg-gradient-to-br from-primary/5 to-secondary/5">
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto text-center">
-              <h1 className="text-4xl md:text-5xl font-bold text-primary mb-6">
-                Our Key Features
-              </h1>
+            <motion.h1
+  initial={{ opacity: 0, y: 50 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.6, ease: "easeOut" }}
+  viewport={{ once: true }}
+  className="text-4xl md:text-5xl font-bold text-primary mb-6"
+>
+ Our Key Features
+</motion.h1>
               <p className="text-xl text-muted-foreground leading-relaxed">
                 Discover what makes SHREE GANESH DRS Foundation a trusted partner in community development and social change.
               </p>
@@ -170,56 +177,57 @@ const Features = () => {
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto">
               <h2 className="text-3xl font-bold text-center text-primary mb-12">
-                Quality Standards & Certifications
+                Quality Standards 
               </h2>
               <div className="grid md:grid-cols-2 gap-8">
-                <Card>
-                  <CardContent className="p-8">
-                    <div className="flex items-center mb-4">
-                      <Star className="h-8 w-8 text-accent mr-3" />
-                      <h3 className="text-xl font-bold text-primary">ISO Standards</h3>
-                    </div>
-                    <p className="text-muted-foreground leading-relaxed">
-                      We adhere to international ISO standards for quality management and social responsibility, ensuring our operations meet global best practices.
-                    </p>
-                  </CardContent>
-                </Card>
+              <Card className="transition-all duration-300 border border-gray-200 hover:shadow-2xl hover:border-primary hover:scale-[1.02]">
+  <CardContent className="p-8">
+    <div className="flex items-center mb-4">
+      <Star className="h-8 w-8 text-accent mr-3" />
+      <h3 className="text-xl font-bold text-primary">ISO Standards</h3>
+    </div>
+    <p className="text-muted-foreground leading-relaxed">
+      We adhere to international ISO standards for quality management and social responsibility, ensuring our operations meet global best practices.
+    </p>
+  </CardContent>
+</Card>
 
-                <Card>
-                  <CardContent className="p-8">
-                    <div className="flex items-center mb-4">
-                      <Zap className="h-8 w-8 text-secondary mr-3" />
-                      <h3 className="text-xl font-bold text-primary">Rapid Response</h3>
-                    </div>
-                    <p className="text-muted-foreground leading-relaxed">
-                      Our emergency response protocols enable us to quickly mobilize resources and support communities during crisis situations.
-                    </p>
-                  </CardContent>
-                </Card>
+<Card className="transition-all duration-300 border border-gray-200 hover:shadow-2xl hover:border-primary hover:scale-[1.02]">
+  <CardContent className="p-8">
+    <div className="flex items-center mb-4">
+      <Zap className="h-8 w-8 text-secondary mr-3" />
+      <h3 className="text-xl font-bold text-primary">Rapid Response</h3>
+    </div>
+    <p className="text-muted-foreground leading-relaxed">
+      Our emergency response protocols enable us to quickly mobilize resources and support communities during crisis situations.
+    </p>
+  </CardContent>
+</Card>
 
-                <Card>
-                  <CardContent className="p-8">
-                    <div className="flex items-center mb-4">
-                      <Shield className="h-8 w-8 text-primary mr-3" />
-                      <h3 className="text-xl font-bold text-primary">Financial Integrity</h3>
-                    </div>
-                    <p className="text-muted-foreground leading-relaxed">
-                      Regular financial audits and transparent reporting ensure the highest standards of financial integrity and donor confidence.
-                    </p>
-                  </CardContent>
-                </Card>
+<Card className="transition-all duration-300 border border-gray-200 hover:shadow-2xl hover:border-primary hover:scale-[1.02]">
+  <CardContent className="p-8">
+    <div className="flex items-center mb-4">
+      <Shield className="h-8 w-8 text-primary mr-3" />
+      <h3 className="text-xl font-bold text-primary">Financial Integrity</h3>
+    </div>
+    <p className="text-muted-foreground leading-relaxed">
+      Regular financial audits and transparent reporting ensure the highest standards of financial integrity and donor confidence.
+    </p>
+  </CardContent>
+</Card>
 
-                <Card>
-                  <CardContent className="p-8">
-                    <div className="flex items-center mb-4">
-                      <TrendingUp className="h-8 w-8 text-accent mr-3" />
-                      <h3 className="text-xl font-bold text-primary">Continuous Improvement</h3>
-                    </div>
-                    <p className="text-muted-foreground leading-relaxed">
-                      We employ systematic feedback mechanisms and learning systems to continuously improve our programs and increase impact.
-                    </p>
-                  </CardContent>
-                </Card>
+<Card className="transition-all duration-300 border border-gray-200 hover:shadow-2xl hover:border-primary hover:scale-[1.02]">
+  <CardContent className="p-8">
+    <div className="flex items-center mb-4">
+      <TrendingUp className="h-8 w-8 text-accent mr-3" />
+      <h3 className="text-xl font-bold text-primary">Continuous Improvement</h3>
+    </div>
+    <p className="text-muted-foreground leading-relaxed">
+      We employ systematic feedback mechanisms and learning systems to continuously improve our programs and increase impact.
+    </p>
+  </CardContent>
+</Card>
+
               </div>
             </div>
           </div>

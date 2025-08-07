@@ -84,9 +84,15 @@ const Approach = () => {
         <section className="py-20 bg-gradient-to-br from-primary/5 to-secondary/5">
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto text-center">
-              <h1 className="text-4xl md:text-5xl font-bold text-primary mb-6">
-                Our Approach
-              </h1>
+            <motion.h1
+  initial={{ opacity: 0, y: 50 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.6, ease: "easeOut" }}
+  viewport={{ once: true }}
+  className="text-4xl md:text-5xl font-bold text-primary mb-6"
+>
+  Our Approach
+</motion.h1>
               <p className="text-xl text-muted-foreground leading-relaxed">
                 We believe in a holistic, community-driven approach that combines innovation with traditional wisdom to create sustainable solutions for social challenges.
               </p>
