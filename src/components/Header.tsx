@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import drsLogo from "@/assets/DRSlogo.jpg";
 import Lottie from "lottie-react";
 import earthAnimation from "@/assets/Globe.json";
-import { ShimmerButton } from "@/components/magicui/shimmer-button";
+
 
 const Header = () => {
   const location = useLocation();
@@ -12,7 +12,7 @@ const Header = () => {
 
   const navItems = [
     { name: "About", path: "/about" },
-    { name: "Program", path: "/program" }, // now just a link, no dropdown
+    { name: "Program", path: "/program" }, 
     { name: "Approach", path: "/approach" },
     { name: "Features", path: "/features" },
   ];
@@ -22,12 +22,12 @@ const Header = () => {
       <div className="container mx-auto px-4 relative">
 
         {/* Animation Globe */}
-        <div className="absolute top-2 right-2 hidden md:block w-16 h-16 z-50">
+        <div className="absolute top-6 right-2 hidden md:block w-16 h-17 z-50">
           <Lottie animationData={earthAnimation} loop={true} />
         </div>
 
         {/* Header Flex */}
-        <div className="flex items-center justify-between h-24">
+        <div className="flex items-center justify-between h-28">
           {/* Logo */}
           <Link
             to="/"
@@ -35,8 +35,8 @@ const Header = () => {
           >
             <img src={drsLogo} alt="DRS Foundation Logo" className="h-16 w-16" />
             <div>
-              <h1 className="text-xl font-bold text-primary">SHREE GANESH</h1>
-              <p className="text-sm text-muted-foreground">DRS Foundation</p>
+              <h1 className="text-4xl font-bold text-primary">SHREE GANESH</h1>
+              <p className="text-xl text-muted-foreground">DRS Foundation</p>
             </div>
           </Link>
 
@@ -47,7 +47,7 @@ const Header = () => {
                 key={item.name}
                 asChild
                 variant="ghost"
-                className={`font-medium text-lg hover:bg-transparent ${
+                className={`font-medium text-3xl hover:bg-transparent ${
                   location.pathname.startsWith(item.path)
                     ? "text-blue-600"
                     : "text-foreground hover:text-foreground"

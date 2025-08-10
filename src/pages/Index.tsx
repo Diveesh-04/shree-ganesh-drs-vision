@@ -72,7 +72,7 @@ function HeroSection() {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentIndex((prev) => (prev + 1) % slides.length);
-    }, 10000); // change every 10 sec
+    }, 5000); // change every 10 sec
 
     return () => clearInterval(interval);
   }, []);
@@ -81,12 +81,12 @@ function HeroSection() {
 
   return (
     <section
-      className="h-screen bg-center bg-cover text-white relative overflow-hidden transition-all duration-1000 ease-in-out"
+      className=" h-screen bg-center bg-cover text-white relative overflow-hidden transition-all duration-1000 ease-in-out"
       style={{ backgroundImage: `url(${currentSlide.image})` }}
     >
     
       <div className="absolute inset-0 flex items-center justify-center z-10">
-        <div className="bg-black/50 p-8 rounded-xl text-center max-w-3xl mx-auto">
+        <div className=" p-8 rounded-xl text-center max-w-3xl mx-auto">
           <motion.h1
             key={currentIndex + "-heading"}
             initial={{ opacity: 0, y: 40 }}
