@@ -4,15 +4,15 @@ import { Button } from "@/components/ui/button";
 import drsLogo from "@/assets/DRSlogo.jpg";
 import Lottie from "lottie-react";
 import earthAnimation from "@/assets/Globe.json";
+import { ShimmerButton } from "@/components/magicui/shimmer-button";
 
 const Header = () => {
   const location = useLocation();
-  const [showDropdown, setShowDropdown] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const navItems = [
     { name: "About", path: "/about" },
-    { name: "Program", path: "/program" },
+    { name: "Program", path: "/program" }, // now just a link, no dropdown
     { name: "Approach", path: "/approach" },
     { name: "Features", path: "/features" },
   ];
@@ -27,13 +27,13 @@ const Header = () => {
         </div>
 
         {/* Header Flex */}
-        <div className="flex items-center justify-between h-20">
+        <div className="flex items-center justify-between h-24">
           {/* Logo */}
           <Link
             to="/"
             className="flex items-center space-x-3 hover:opacity-80 transition-opacity"
           >
-            <img src={drsLogo} alt="DRS Foundation Logo" className="h-12 w-12" />
+            <img src={drsLogo} alt="DRS Foundation Logo" className="h-16 w-16" />
             <div>
               <h1 className="text-xl font-bold text-primary">SHREE GANESH</h1>
               <p className="text-sm text-muted-foreground">DRS Foundation</p>
@@ -41,49 +41,21 @@ const Header = () => {
           </Link>
 
           {/* Desktop Menu */}
-          <nav className="hidden md:flex items-center space-x-1 relative mr-20">
-            {navItems.map((item) =>
-              item.name === "Program" ? (
-                <div
-                  key={item.name}
-                  className="relative"
-                  onMouseEnter={() => setShowDropdown(true)}
-                  onMouseLeave={() => setShowDropdown(false)}
-                >
-                  <Button
-                    asChild
-                    variant="ghost"
-                    className={`font-medium text-lg hover:bg-blue ${
-                      location.pathname.startsWith(item.path)
-                        ? "text-blue-600"
-                        : "text-foreground hover:text-black"
-                    }`}
-                  >
-                    <Link to={item.path}>{item.name}</Link>
-                  </Button>
-                  {showDropdown && (
-                    <div className="absolute left-0 mt-2 w-48 bg-white shadow-lg rounded-md z-50">
-                      {/* Dropdown items */}
-                      <Link to="/program/education" className="block px-4 py-2 hover:bg-gray-100">Education</Link>
-                      <Link to="/program/health" className="block px-4 py-2 hover:bg-gray-100">Health</Link>
-                    </div>
-                  )}
-                </div>
-              ) : (
-                <Button
-                  key={item.name}
-                  asChild
-                  variant="ghost"
-                  className={`font-medium text-lg hover:bg-transparent ${
-                    location.pathname === item.path
-                      ? "text-blue-600"
-                      : "text-foreground hover:text-foreground"
-                  }`}
-                >
-                  <Link to={item.path}>{item.name}</Link>
-                </Button>
-              )
-            )}
+          <nav className="hidden md:flex items-center space-x-4 mr-20">
+            {navItems.map((item) => (
+             <Button
+                key={item.name}
+                asChild
+                variant="ghost"
+                className={`font-medium text-lg hover:bg-transparent ${
+                  location.pathname.startsWith(item.path)
+                    ? "text-blue-600"
+                    : "text-foreground hover:text-foreground"
+                }`}
+              >
+                <Link to={item.path}>{item.name}</Link>
+              </Button>
+            ))}
           </nav>
 
           {/* Mobile Menu Button */}
@@ -117,7 +89,7 @@ const Header = () => {
                 to={item.path}
                 onClick={() => setIsMobileMenuOpen(false)}
                 className={`block px-4 py-2 rounded-md text-lg font-medium ${
-                  location.pathname === item.path
+                  location.pathname.startsWith(item.path)
                     ? "text-blue-600 bg-gray-100"
                     : "text-foreground hover:bg-gray-100"
                 }`}
